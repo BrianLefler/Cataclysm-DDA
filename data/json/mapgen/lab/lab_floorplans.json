@@ -393,7 +393,7 @@
         "....----?-------+----..l",
         "hh..|       |       |..l",
         "tt..|       |       |..l",
-        "hh..|       |       |..l",
+        "hh..|       |       |...",
         "....?       ?       ?..l",
         "hh..|       |       |..l",
         "tt..|       |       |..l",
@@ -406,12 +406,12 @@
         "..|       |         +..l",
         "..?       |         |..l",
         "..|       |         |..l",
-        "..|       |         |..l",
+        "..|       |         |...",
         "..|       |         |..l",
         "..----?--------?-----..l",
         ".......................l",
         ".......................l",
-        "...hth.hth.......hth...l"
+        "...hth.hth.......hth...."
       ],
       "palettes": [
         "lab_palette", "lab_loot_generic"
@@ -442,6 +442,107 @@
         { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 3, "y": 13 },
         { "chunks": [ "lab_spawn_9x9_crossdoors" ], "x": 11, "y": 11 },
         { "chunks": [ "lab_border_walls" ], "x": 0, "y": 0 }
+      ]
+    }
+  },
+  {
+    "//": "utility with random room",
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "lab_4side" ],
+    "weight": 50,
+    "object": {
+      "rotation": [ 0, 3 ],
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        ".....|............f.rrrr",
+        ".RRR.|............f.....",
+        ".....+............H....r",
+        "RR.RR-----?-----..fXX..r",
+        "--+--|         |..fXX..r",
+        ".....|         |..f....r",
+        ".c.c.|         |..fXX..X",
+        ".c.c.|         |..fXX..X",
+        ".c.c.?         +..f.....",
+        ".....|         |..fFFHFF",
+        "--+--|         |........",
+        "....l|         |........",
+        "....l|         |........",
+        ".....-----?----------...",
+        "............|       |...",
+        "............|       |-+-",
+        "-------|....|       |..l",
+        ".......D....+       ?..l",
+        ".......D....|       |..l",
+        ".......D....|       |..l",
+        "-------|M...|       |..l",
+        ".......D....----?----..l",
+        ".......D...............l",
+        ".......D...............l"
+      ],
+      "palettes": [
+        "lab_palette"
+      ],
+      "furniture": {
+        "^": "f_indoor_plant",
+        "f": "f_null",
+        "R": "f_rack"
+      },
+      "terrain": {
+        "F": "t_chainfence_h",
+        "f": "t_chainfence_v",
+        "H": "t_chaingate_c",
+        "&": "t_radio_tower",
+        "P": "t_generator_broken",
+        "S": "t_sewage_pump",
+        "p": "t_sewage_pipe",
+        "M": "t_gates_control_concrete",
+        "g": "t_wall_glass"
+      },
+      "mapping": {
+        "X": {
+          "items": [
+            { "item": "robots", "chance": 30 },
+            { "item": "science", "chance": 15 },
+            { "item": "sewage_plant", "chance": 8 }
+          ]
+        },
+        "R": {
+          "items": [
+            { "item": "cleaning", "chance": 60 }
+          ]
+        },
+        "l": {
+          "items": [
+            { "item": "office", "chance": 10 },
+            { "item": "textbooks", "chance": 3 },
+            { "item": "science", "chance": 3 },
+            { "item": "harddrugs", "chance": 3 },
+            { "item": "softdrugs", "chance": 3 },
+            { "item": "dresser", "chance": 3 },
+            { "item": "lab_torso", "chance": 3 },
+            { "item": "lab_pants", "chance": 3 }
+          ]
+        },
+        "r": {
+          "items": [
+            { "item": "mine_equipment", "chance": 30 }
+          ]
+        },
+        "c": {
+          "items": [
+            { "item": "chem_lab", "chance": 30 }
+          ]
+        }
+      },
+      "place_monster": [
+        { "monster": "mon_zombie", "x": [1, 22], "y": [1, 22], "chance": 70, "repeat": [1, 2] }
+      ],
+      "place_nested": [
+        { "chunks": [ "lab_spawn_9x9_crossdoors" ], "x": 6, "y": 4 },
+        { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 13, "y": 14 },
+        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [17,19], "repeat": 8},
+        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [21,23], "repeat": 8}
       ]
     }
   },
@@ -619,14 +720,14 @@
       "rotation": [ 0, 3 ],
       "fill_ter": "t_rock_floor",
       "rows": [
-        ".....|...........f......",
-        "llll.|...........f.rrrr.",
-        ".....+...........H......",
-        "lllll|...........fXX..r.",
-        "-----|FFFF|---|..fXX..r.",
-        ".....f....|...|..f....r.",
-        ".pSp.f.PP.|.&.|..fXX..X.",
-        ".pSp.f.PP.|.x.|..fXX..X.",
+        ".....|...........f.rrrrr",
+        ".lll.|...........f......",
+        ".....+...........H.....r",
+        "llll.|...........fXX...r",
+        "-----|FFFF|---|..fXX...r",
+        ".....f....|...|..f.....r",
+        ".pSp.f.PP.|.&.|..fXX...X",
+        ".pSp.f.PP.|.x.|..fXX...X",
         ".....f.PP.|...|..f......",
         ".....H....|-+-|..fFFHFFf",
         "FFHFFf........f.........",
@@ -720,7 +821,7 @@
     "type": "mapgen",
     "method": "json",
     "om_terrain": [ "lab_4side" ],
-    "weight": 100,
+    "weight": 50,
     "object": {
       "rotation": [ 0, 3 ],
       "fill_ter": "t_rock_floor",
