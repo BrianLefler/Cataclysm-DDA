@@ -327,6 +327,8 @@
     "weight": 100,
     "object": {
       "fill_ter": "t_rock_floor",
+      "rotation": [ 0, 1 ],
+      "//": "Only allows 0,1 orientation so the right-side rooms stay against a north or east wall",
       "rows": [
         "...............|.cccccX|",
         "...............+......X|",
@@ -339,19 +341,19 @@
         "..?         ?..|       |",
         "..|         |..|       |",
         "..|         |..----?---|",
-        "..|         |..........+",
-        "..|         |..........+",
+        "..|         |...........",
+        "..|         |...........",
         "-?-----?-----..----+---|",
         "          |....|       |",
-        "          |....|       |",
-        "          |..|-|       |",
+        "          g....|       |",
+        "          g..|-|       |",
         "          |..|f|       |",
         "          +..+.|       |",
         "          |..|-|       |",
-        "          |..|T|       |",
-        "          |..+.|---+---|",
+        "          g..|T|       |",
+        "          g..+.|---+---|",
         "          |..|S|X.....X|",
-        "-----------++----------|"
+        "          |..|-|X.ccc.X|"
       ],
       "palettes": [
         "lab_palette", "lab_loot_generic"
@@ -360,12 +362,13 @@
         "H": [ "f_armchair" ]
       },
       "terrain": {
-        "?": [ "t_concrete_wall", "t_concrete_wall", "t_door_metal_c" ]
+        "?": [ "t_concrete_wall", "t_concrete_wall", "t_door_metal_c" ],
+        "g": [ "t_wall_glass"]
       },
       "mapping": {
         "t": {
           "items": [
-            { "item": "textbooks", "chance": 5 },
+            { "item": "textbooks", "chance": 2 },
             { "item": "magazines", "chance": 3 }
           ]
         }
@@ -374,8 +377,7 @@
         { "chunks": [ "lab_spawn_9x9_crossdoors" ], "x": 3, "y": 4 },
         { "chunks": [ "lab_spawn_9x9" ], "x": [0,1], "y": 14 },
         { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 16, "y": 3 },
-        { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 16, "y": 14 },
-        { "chunks": [ "lab_border_walls" ], "x": 0, "y": 0 }
+        { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 16, "y": 14 }
       ]
     }
   },
@@ -450,35 +452,35 @@
     "type": "mapgen",
     "method": "json",
     "om_terrain": [ "lab_4side" ],
-    "weight": 50,
+    "weight": 5000,
     "object": {
       "rotation": [ 0, 3 ],
       "fill_ter": "t_rock_floor",
       "rows": [
-        ".....|............f.rrrr",
-        ".RRR.|............f.....",
-        ".....+............H....r",
-        "RR.RR-----?-----..fXX..r",
-        "--+--|         |..fXX..r",
-        ".....|         |..f....r",
-        ".c.c.|         |..fXX..X",
-        ".c.c.|         |..fXX..X",
-        ".c.c.?         +..f.....",
-        ".....|         |..fFFHFF",
-        "--+--|         |........",
-        "....l|         |........",
-        "....l|         |........",
-        ".....-----?----------...",
-        "............|       |...",
-        "............|       |-+-",
-        "-------|....|       |..l",
-        ".......D....+       ?..l",
-        ".......D....|       |..l",
-        ".......D....|       |..l",
-        "-------|M...|       |..l",
-        ".......D....----?----..l",
         ".......D...............l",
-        ".......D...............l"
+        ".......D...............l",
+        ".......D....----?----..l",
+        "-------|M...|       |..l",
+        ".......D....|       |..l",
+        ".......D....|       |..l",
+        ".......D....+       ?..l",
+        "-------|....|       |..l",
+        "............|       |-+-",
+        "............|       |...",
+        ".....-----?----------...",
+        "....l|         |........",
+        "....l|         |........",
+        "--+--|         |........",
+        ".....|         |..fFFHFF",
+        ".c.c.?         +..f.....",
+        ".c.c.|         |..fXX..X",
+        ".c.c.|         |..fXX..X",
+        ".....|         |..f....r",
+        "--+--|         |..fXX..r",
+        "RR.RR-----?-----..fXX..r",
+        ".....+............H....r",
+        ".RRR.|............f.....",
+        ".....|............f.rrrr"
       ],
       "palettes": [
         "lab_palette"
@@ -492,12 +494,8 @@
         "F": "t_chainfence_h",
         "f": "t_chainfence_v",
         "H": "t_chaingate_c",
-        "&": "t_radio_tower",
-        "P": "t_generator_broken",
-        "S": "t_sewage_pump",
-        "p": "t_sewage_pipe",
         "M": "t_gates_control_concrete",
-        "g": "t_wall_glass"
+        "?": [ "t_concrete_wall", "t_concrete_wall", "t_door_metal_c" ]
       },
       "mapping": {
         "X": {
@@ -535,14 +533,11 @@
           ]
         }
       },
-      "place_monster": [
-        { "monster": "mon_zombie", "x": [1, 22], "y": [1, 22], "chance": 70, "repeat": [1, 2] }
-      ],
       "place_nested": [
-        { "chunks": [ "lab_spawn_9x9_crossdoors" ], "x": 6, "y": 4 },
-        { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 13, "y": 14 },
-        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [17,19], "repeat": 8},
-        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [21,23], "repeat": 8}
+        { "chunks": [ "lab_spawn_9x9_crossdoors" ], "x": 6, "y": 11 },
+        { "chunks": [ "lab_spawn_7x7_crossdoors" ], "x": 13, "y": 3 },
+        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [4,6], "repeat": 8},
+        { "chunks": [ "sub_f_crate_utility_room" ], "x": [0,6], "y": [0,2], "repeat": 8}
       ]
     }
   },
