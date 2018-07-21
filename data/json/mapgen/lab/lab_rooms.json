@@ -548,6 +548,43 @@
     }
   },
   {
+    "//": "library",
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "lab_room_9x9",
+    "object": {
+      "mapgensize": [ 9, 9 ],
+      "rotation": [ 0, 3 ],
+      "rows": [
+        "......xx.",
+        ".]]]..hh.",
+        ".........",
+        ".]]].]]].",
+        ".........",
+        ".]]].]]].",
+        ".........",
+        ".]]].]]].",
+        "........."
+      ],
+      "palettes": [
+        "lab_palette"
+      ],
+      "furniture": {
+        "]": "f_bookcase"
+      },
+      "mapping": {
+        "]": {
+          "items": [
+            { "item": "manuals", "chance": 10 },
+            { "item": "textbooks", "chance": 10 },
+            { "item": "novels", "chance": 5 },
+            { "item": "magazines", "chance": 5 }
+          ]
+        }
+      }
+    }
+  },
+  {
     "//": "water tank 9x9",
     "type": "mapgen",
     "method": "json",
@@ -625,8 +662,7 @@
         "lab_palette"
       ]
     }
-  }
-,
+  },
   {
     "//": "kitchen and dining area",
     "type": "mapgen",
