@@ -7,7 +7,7 @@
     "nested_mapgen_id": "lab_spawn_7x7",
     "object": {
       "mapgensize": [ 7, 7 ],
-      "place_nested": [ { "chunks": [ "lab_room_7x7", "lab_room_7x7", "lab_room_7x7", "null"], "x": 0, "y": 0} ]
+      "place_nested": [ { "chunks": [ [ "lab_room_7x7", 100 ] ], "x": 0, "y": 0} ]
     }
   },
   {
@@ -17,7 +17,7 @@
     "nested_mapgen_id": "lab_spawn_7x7_crossdoors",
     "object": {
       "mapgensize": [ 9, 9 ],
-      "place_nested": [ { "chunks": [ "lab_room_7x7", "lab_room_7x7", "lab_room_7x7_crossdoors", "null" ], "x": 0, "y": 0} ]
+      "place_nested": [ { "chunks": [ [ "lab_room_7x7", 50 ], [ "lab_room_7x7_crossdoors", 100 ] ], "x": 0, "y": 0} ]
     }
   },
   {
@@ -27,7 +27,7 @@
     "nested_mapgen_id": "lab_spawn_9x9",
     "object": {
       "mapgensize": [ 9, 9 ],
-      "place_nested": [ { "chunks": [ "lab_room_9x9", "lab_room_9x9", "lab_room_9x9", "null" ], "x": 0, "y": 0} ]
+      "place_nested": [ { "chunks": [ [ "lab_room_9x9", 100 ] ], "x": 0, "y": 0} ]
     }
   },
   {
@@ -37,7 +37,7 @@
     "nested_mapgen_id": "lab_spawn_9x9_crossdoors",
     "object": {
       "mapgensize": [ 9, 9 ],
-      "place_nested": [ { "chunks": [ "lab_room_9x9", "lab_room_9x9", "lab_room_9x9_crossdoors", "null" ], "x": 0, "y": 0} ]
+      "place_nested": [ { "chunks": [ [ "lab_room_9x9", 50 ], [ "lab_room_9x9_crossdoors", 100 ] ], "x": 0, "y": 0} ]
     }
   },
   {
